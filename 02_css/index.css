@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'GoryeongStrawberry';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/GoryeongStrawberry.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#hello{
+    color: blue; 
+}
+
+/*contain: 이미지가 잘리거나 찌그러지지 않는 한도 내에서 제이 크게 설정된다*/
+/*cover: 이미지가 찌그러지지 않는 한도 내에서 제일 크게 설정된다. 이미지의 가로, 세로비가 요소와다르다면
+이미지를 세로 또는 가로*/
+#back{
+    background-color: black;
+    color: white;
+    text-align: justify;
+}
+#hi{
+    color: red;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#border{
+    height: 600px;
+    background-image: url("../ghkdlxld.jpg");
+    font-size: 30px;
+    margin-left: -10%;
+}
+#hello{
+    width: 600px;
+    height: 100px;
+    border-color: brown;
+    border-width: 10px;
+    background-color: pink;
+    margin: 20px;
+    padding: 80px;
+    font-size: 40px;
+    color: black;
+    font-family: 'GoryeongStrawberry';
+}
+.orange{
+    color: red;
+}
+.back-ground{
+    background-color: aqua;
+}
+div li{
+    color: blue;
+}
+div > span{
+    font-weight: bold;
+}
+p ~ span{
+  color: pink;
+}
+#click:active{
+  color: blueviolet;
+  font-size: 30px;
+}
+a:visited{
+    color: red;
+}
+.fruits span:first-child{
+    color: red;
+}
+.fruits h3:last-child{
+    color: violet;
+}
+.list span:nth-child(odd){
+    color: blue;
+}
+.list span:nth-child(even){
+    border: 1px solid red;
+    padding: 5px;
+}
+.fruit *:not(span){
+    font-size: 30px;
+    font-size: 50px;
+}
+tr .red{
+    color: red;
+}
+tr .blue{
+    color: blue;
+}
+.circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+#circle1{
+    background-color: rgb(78, 78, 169);
+    margin: 2%;
+}
+#circle2{
+    background-color: rgb(31, 74, 138);
+    position:relative;
+    left: 50px;
+    margin-top: -70px;
+}
+#circle3{
+    background-color: rgb(58, 110, 183);
+    left: 100px;
+    position: absolute;
+    margin-top: -70px;
+}
+#circle4{
+    background-color: rgb(165, 188, 220);
+    left: 150px;
+    position: absolute;
+    margin-top: -50px;
+}
+#circle5{
+    background-color: rgb(47, 64, 88);
+    left: 200px;
+    position: absolute;
+    margin-top: -50px;
+}
+#eye{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    position: absolute;
+    background-color: rgb(220, 220, 237);
+    margin-top: -10%;
+    margin-left: 3%;
+}
+#eye1{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    position: absolute;
+    background-color: rgb(27, 27, 30);
+    margin-top: -10%;
+    margin-left: 3%;
+}
+.green{
+    background-image: url("../green.avif");
+    background-repeat: no-repeat;
+    margin-top: 10%;
+    width: 1000px;
+    height: 400px;
+    margin-top: -30px;
+}
+.dog{
+    position: absolute;
+    transform: skew(200deg);
+}
+.die{
+    position: absolute;
+    transform: skewY(30deg);
+    top: 10px;
+    z-index: 100;
+    margin: 100px;
+}
+.mino{
+    position: absolute;
+    transform: skewY(30deg);
+    top: 10px;
+    left: 150px;
+    z-index: 50;
+    margin: 100px;
+
+}
+.img{
+    position: absolute;
+    transform: skewY(30deg);
+    top:10px;
+    left: 250px;
+    z-index: 1;
+    margin: 100px;
+
+}
