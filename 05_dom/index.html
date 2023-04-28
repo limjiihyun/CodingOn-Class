@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hello" class="hi" name="good">안녕하세요</div>
+    <div id="come">어서오세요</div>
+    <div id="world">Hello World</div>
+    <a id="link" href="https://www.naver.com" target="_blank">이동</a>
+
+    <script>
+
+        // console.log(document.head)
+        // console.log(document.getElementsByTagName('div'))
+        // console.log(document.getElementById('hello'))
+        // console.log(document.getElementsByClassName('hi'))
+        // console.log(document.getElementsByName('good'))
+        // console.log(document.querySelector('.hi'))
+        // console.log(document.querySelector('#come'))
+
+
+        // document.querySelector('#come').innerHTML="컴온"
+
+        document.getElementById('world').className='hi'
+        const world = document.getElementById('world');
+
+        //측정값을 가져오거나 설정할 경우
+        //가져오는 경우 getAttribute()
+        //설정하는 경우 setAttribute()
+        console.log(world)
+        console.log(world.getAttribute('class'))
+
+        const link= document.querySelector('#link')
+        console.log(link)
+        console.log(link.getAttribute('href'))
+        link.setAttribute('href', 'https://google.com')
+
+        // link.href="https://www.daum.net"
+
+        // world.style.color="red"
+
+        document.querySelector('#link').href="https://google.com"
+        //변수 선언 할 필요 없이 바로 링크를 바꾸는 방법
+
+        const p = document.createElement('p').innerHTML="새로생성";
+        world.append(p)
+
+        // world.appendChild(p)
+        const login = false
+        login === false && world.remove()
+
+
+
+
+    </script>
+
+    <!-- <script src="index.js"></script> -->
+</body>
+</html>
