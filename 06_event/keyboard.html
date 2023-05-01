@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #circle{
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!-- <input id="keyboard"></input>
+    <div id="circle"></div>
+    폼이벤트
+     <form action="/" id="todo-form"> //action안에는 form 이 어디로 날라갈지에 대해서 -->
+      <!-- <input type="text" name ="todo">
+      <button>Add</button>
+    </form>
+    <ul class="todos"></ul>  -->
+    <!-- 제출한 것들을 넣어줌 -->
+
+    <input type="text" id="change-input">
+    <div class="intro"></div>
+
+    <div class="container">
+        <ul>
+            <li class="todo">1. 해야할일</li>
+            <li class="todo">2. 해야할일</li>
+            <li class="done">3. 완료한 일</li>
+            <li class="done">4. 완료한 일</li>
+            <li class="done">5. 완료한 일</li>
+        </ul>
+    </div>
+
+    <script>
+
+        const i =document.querySelectorAll('li')
+        for(let li of i){
+            li.classList.toggle('done')
+            li.classList.toggle('todo')
+        }
+
+
+
+
+    //     const cinput= document.querySelector('#change-input')
+    //     cinput.addEventListener('change', function(){
+    //         console.log('변경되었습니다.')
+    //     })
+
+    //    cinput.addEventListener('input', function(){
+    //       let div=document.querySelector('.intro')
+    //       div.textContent=this.value
+    //    })
+
+    //    const keyboard=document.querySelector('#keyboard')
+    //    keyboard.addEventListener('keydown', function(event){
+    //        //console.log(event.code)
+    //        if(event.code=='ArrowUp'){
+    //         console.log('up')
+    //        }
+    //    })
+    //    const circle=document.querySelector('#circle')
+    //    circle.addEventListener('keydown', function(e){
+    //     if(e.code=='ArrowRight'){
+    //         circle.style.left="50px";
+    //     }
+    //    })
+    //    const todoForm=document.querySelector('#todo-form')
+    //    const todos=document.querySelector('.todos')
+    //    // console.log(todoForm)
+    //    // 태그들을 가져옴
+    //    todoForm.addEventListener('submit', function(e){
+    //     //form 태그를 가져옴
+    //     e.preventDefault();  
+    //     // console.log(e)
+        
+    //     const todoInput = document.querySelector('input[name=todo]');
+    //     console.log(todoInput.value)
+    //     const todo = todoInput.value
+
+    //     const newTodo=document.createElement('li')
+    //     newTodo.append(todo)
+    //     todos.append(newTodo)
+
+    //     todoInput.value=' '
+
+    //    })
+
+    document.getElementsByClassName('intro')
+
+
+   
+    </script>
+
+</body>
+</html>

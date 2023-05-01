@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <ul class="colors">
+        <li class="orange">orange</li>
+        <li class="green">green</li>
+        <li class="navy">navy</li>
+    </ul>
+    
+    <h6>append() - 선택된 요소의 자식 요소 중 마지막에 추가</h6>
+    <button onClick="appendJS()">js바꾸기</button>
+    <button onClick="appendJquery()">jquery바꾸기</button>
+
+    <h6> prepend() - 선택된 요소의 자식요소 중 맨 앞에 추가 </h6>
+    <button onClick="prependJS()">js바꾸기</button>
+    <button onClick="prependJquery()">jquery바꾸기</button>
+
+    <h6>before()- 선택된 요소의 형제이면서 이전 형제로 추가</h6>
+    <button onClick="beforeJs()">js바꾸기</button>
+    <button onClick="beforeJquery()">jquery바꾸기</button>
+
+    <h6>after()- 선택된 요소의 형제이면서 다음 형제로 추가</h6>
+    <button onClick="afterJs()">js바꾸기</button>
+    <button onClick="afterJquery()">jquery바꾸기</button>
+
+    <ul class="nums">
+        <li>1</li>
+        <li id="li2">2</li>
+        <li>3</li>
+    </ul>
+
+    <h6> remove() - 선택된 요소의 Dom을 삭제 </h6>
+    <button onClick="removeJs()">js 바꾸기</button>
+    <button onClick="removeJquery()">jquery 바꾸기</button>
+
+    <h6> empty() - 선택한 요소의 자식 요소를 모두 삭제 </h6>
+    <button onClick="emptyJs()">js 바꾸기</button>
+    <button onClick="emptyJquery()">jquery 바꾸기</button>
+
+
+    <script src="append.js"></script>
+</body>
+</html>

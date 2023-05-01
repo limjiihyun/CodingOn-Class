@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div onClick="alert('div태그를 클릭')">클릭</div>
+    <button id="button">버튼</button>
+    <div id="mouseover">마우스올리세요</div>
+    <button id="button2">이벤트리스너</button>
+    <button id="button3">마우스엔터</button> -->
+    <!-- <div id="div1">div 태그입니다</div> -->
+
+    <button class="btn">btn1</button>
+    <button class="btn">btn2</button>
+    <button class="btn">btn3</button>
+    <button class="btn">btn4</button>
+    <button class="btn">btn5</button>
+
+
+    <script>
+        const btns=document.querySelectorAll('.btn');
+ 
+        //함수가 속해 있던 객체 참조
+        function bgColor(){
+            btns[0].style.backgroundColor = "blue"
+            
+        }
+
+        for(let btn of btns){
+            console.log(btn)
+            btn.addEventListener('click', bgColor)
+        }
+
+        // function onMouseOver(){
+        //     over.style.color='red'
+        //     over.style.fontWeight = '700'
+        // }
+        // const over=document.getElementById('div1')
+        // over.onmouseover=onMouseOver
+
+        // const div1=document.querySelector('#div1')
+        // div1.addEventListener('mouseover', function(){
+        //     div1.style.color='red'
+        //     div1.style.fontWeight= 700
+        // })
+
+        //2번쨰 방법 onXXXX 방법
+        // const btn = document.getElementById('button')
+        // btn.onClick = function(){
+        //     alert('버튼태그를 클릭')
+        // }
+        // function onMouseOver(){
+        //     console.log("마우스 오버")
+        //     over.style.color='red'
+        // }
+        // function onMouseOut(){
+        //     over.style.color='blue'
+        // }
+        // const over=document.getElementById('mouseover')
+        // over.onmouseover=onMouseOver
+        // over.onmouseout=onMouseOut
+
+        //3번째 방법 addEventListener방식
+        // const btn2=document.querySelector('#button2')
+        // btn2.addEventListener('click', function(){
+        //     alert("이벤트리스너 방식입니다.")
+        // })
+
+        // function onMouseEnter(){
+            // alert('on mouse event입니다')
+        //     const divs=document.createEvent('div')
+        //     btn2.append(divs)
+        // }
+        // const btn3=document.querySelector('#button3')
+        // btn3.addEventListener('mouseenter', onMouseEnter)
+
+        
+
+    </script>
+</body>
+</html>
