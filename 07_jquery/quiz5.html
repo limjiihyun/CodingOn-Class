@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function diceNumber(first, second){
+            if(typeof first==='number' && typeof second==='number'){
+                const sum=first+second;
+            if(sum%4==0){
+                return '4의 배수';
+            }else{
+                return '4의 배수가 아님'
+            }
+            }   else{
+                return 'Not a Number'
+            }    
+        }
+    </script>
+</body>
+</html>

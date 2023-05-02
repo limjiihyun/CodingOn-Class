@@ -58,3 +58,50 @@ function emptyJs(){
 function emptyJquery(){
     $('.num').empty()
 }
+
+//230502
+function findParent(){
+    console.log($('.child:nth-child(2)').parent())
+}
+function findParents(){
+    console.log($('.child2').parents())
+}
+function findNext(){
+    console.log($('.child2').next())
+}
+function findPrev(){
+    console.log($('.child2').prev())
+}
+function findChildren(){
+    console.log($('.parent').children())
+}
+
+//클래스 제어
+function addClass(){
+   $('.origin-class').addClass('add-class')
+}
+function addClassJs(){
+    let p = document.querySelector(".origin-class")
+    p.classList.add('add-class')
+}
+function removeClass(){
+    $('.origin-class').removeClass('origin-class')
+}
+function removeClassJs(){
+    let p = document.querySelector(".origin-class")
+    p.classList.remove('origin-class')
+}
+function hasClass(){
+   console.log($('body').hasClass('orgin-class'))
+}
+function hasClassJs(){
+    let p = document.querySelector(".origin-class")
+    console.log(p.classList.contains('orgin-class'))
+}
+function toggleClass(){
+    $('.origin-class').toggleClass('add-class')
+}
+function toggleClassJs(){
+    let p = document.querySelector(".origin-class")
+    p.classList.toggle('add-class')
+}
