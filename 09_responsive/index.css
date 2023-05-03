@@ -1,0 +1,106 @@
+html{
+    font-size: 16px;
+}
+.box{
+    margin-bottom: 30px;
+}
+.px{
+    width: 100px;
+    height: 100px;
+    background-color: palegoldenrod;
+}
+.per-parent{
+    width: 100px;
+    height: 100px;
+    background-color: plum;
+    position: relative;
+}
+.per-child{
+    width: 50%;
+    height: 50%;
+    background-color: palegreen;
+    position: relative;
+    bottom: 0px;
+}
+
+.em{
+    font-size: 2em;
+}
+.rem{
+    font-size: 2em;
+}
+.vw{
+    width: 20vw;
+    height: 30vw;
+    background-color: coral;
+}
+.vh{
+    height: 20vh;
+    width: 30vh;
+    background-color: aqua;
+}
+:root{
+    --color-primary: #1faece; /*중심이 되었으면 하는 색상등을 넣어두어 한번에 바꿀 수 있도록 함*/
+    --height-header:100px;
+    --dark: #000;
+}
+.my-div{
+    background-color: var(--color-primary);
+    width: 200px;
+    height: var(--height-header);
+}
+.dark{
+    background-color: var(--dark);
+    width: 200px;
+    height: var(--height-header);
+}
+p{
+    width: 100px;
+    height: 100px;
+    background-color: var(--color, blue);
+}
+li{
+    color: var(--color, blue)
+}
+span{
+    --color: green;
+}
+
+#media{
+    background-color: aqua;
+    width: 20%;
+    height: 50px;
+}
+
+@media (min-width: 600px) and (max-width: 800px){
+    #media {
+        background-color: rgba(54, 123, 101, 0.604);
+        width: 20%;
+        height: 50px;
+    }
+}
+
+.parent{
+    display: flex;
+}
+.child{
+    background-color: rgb(15, 15, 15);
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border:1px solid red;
+}
+
+@media (max-width: 700px) {
+    .parent {
+        /*flex-direction 은 방향을 지정해준다. */
+        flex-direction: column;
+    }
+    .child{
+        background-color: aqua;
+    }
+}
+
+.icon-menu{
+    display: flex;
+}

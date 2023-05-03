@@ -11,35 +11,47 @@
     <button id="button">버튼</button>
     <div id="mouseover">마우스올리세요</div>
     <button id="button2">이벤트리스너</button>
-    <button id="button3">마우스엔터</button> -->
-    <!-- <div id="div1">div 태그입니다</div> -->
+    <button id="button3">마우스엔터</button> 
+    <div id="div1">div 태그입니다</div>
 
     <button class="btn">btn1</button>
     <button class="btn">btn2</button>
     <button class="btn">btn3</button>
     <button class="btn">btn4</button>
-    <button class="btn">btn5</button>
+    <button class="btn">btn5</button> -->
+    <button id="testBtn2">Test</button> 
 
 
     <script>
-        const btns=document.querySelectorAll('.btn');
+        let testBtn2 = document.querySelector('#testBtn2'); 
+    function testFunc(){ 
+    	alert('Hello world1');
+    } 
+    testBtn2.addEventListener('click', testFunc); 
+    
+    testBtn2.addEventListener('click', function () { 
+    	alert('Hello world2'); 
+    }); 
+    
+	 
+        // const btns=document.querySelectorAll('.btn');
  
-        //함수가 속해 있던 객체 참조
-        function bgColor(){
-            btns[0].style.backgroundColor = "blue"
+        // //함수가 속해 있던 객체 참조
+        // function bgColor(){
+        //     btns[0].style.backgroundColor = "blue"
             
-        }
+        // }
 
-        for(let btn of btns){
-            console.log(btn)
-            btn.addEventListener('click', bgColor)
-        }
+        // for(let btn of btns){
+        //     console.log(btn)
+        //     btn.addEventListener('click', bgColor)
+        // }
 
         // function onMouseOver(){
         //     over.style.color='red'
         //     over.style.fontWeight = '700'
         // }
-        // const over=document.getElementById('div1')
+        // const over=document.getElementById('mouseover', 'mouseover')
         // over.onmouseover=onMouseOver
 
         // const div1=document.querySelector('#div1')

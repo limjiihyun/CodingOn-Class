@@ -34,7 +34,7 @@ $('.numbers').mouseover(function(){
     $(this).css('background-color', 'yellow')
 })
 
-$('.numbers').on('mouseleave', function(){
+$('.numbers').on('mouseout', function(){
     $(this).css('background-color', 'skyblue')
 })
 
@@ -66,7 +66,7 @@ $('.menu1').hover(function(){
 //===========
 
 $('.input-key').keydown(function(e){
-   console.log(e.code)
+   //console.log(e.code)
    if(e.code==='ArrowUp'){
     console.log('up')
    }else if(e.code==='ArrowRight'){
@@ -79,6 +79,7 @@ $('.input-key').keydown(function(e){
     console.log('others')
    }
 })
+
 $(".input-key").on('keydown', function(e){
     console.log(e.code)
 })

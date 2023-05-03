@@ -38,8 +38,7 @@ function changeTextJs(){
     p.textContent="<h3>js체인지</h3>"
 }
 function changeTextJquery(){
-    $('#text').text("jquery체인지")
-
+    $('#text').text("<h1>jquery체인지</h1>")
 }
 
 function changeHtmlJs(){

@@ -19,7 +19,14 @@
     <title>Document</title>
 </head>
 <body style="height: 10000px;">
-    <!-- <div class="hello">안녕하세요</div>
+    <button class="btn">Button</button>
+    <script>
+        $('.btn').click(function() {
+            console.log(this);      // 현재 실행 컨텍스트에서 참조되는 객체
+            console.log($(this));  // 이벤트가 발생한 요소
+        });
+    </script>
+    <div class="hello">안녕하세요</div>
     <div class="numbers">
         <div class="num">one</div>
         <div class="num">two</div>
@@ -36,7 +43,7 @@
         <div class="menu1">menu3</div>
     </div>
 
-    <input class="input-key" type="text"/> -->
+    <input class="input-key" type="text"/>
 
     <h3>폼</h3>
     <form action="/" id="todo-form">

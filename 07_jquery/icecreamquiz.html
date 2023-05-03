@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .text-center{
+            text-align: center;
+        }
+        section{
+            float: left;
+
+        }
+        .article-box{
+            background-color: rgb(245, 227, 231);
+            width: 130px;
+            height: auto;
+            border-radius: 20px 20px 20px 20px;
+            text-align: center;
+            font-size: 10px;
+            margin: 10px;
+            padding: 10px;
+            outline: solid 1px rgb(250, 226, 231);
+            float: left;
+
+        }
+        .img-box{
+            background-color: rgb(250, 211, 219);
+            border-radius: 50px 50px 50px 50px;
+            width: 100px;
+        }
+    </style>
+    
+    <h2 class="text-center">이달의 맛 BEST 9</h2>
+    <section class="text-center">
+        <article  class="article-box" >
+            <img src="../image/icecream1.png" class="img-box" id="img">
+            <h3 class="text-center">Top1</h3>
+            <div class="text-center">내가 아인슈페너?!</div>
+        </article>
+    </section>
+
+
+    <script>
+        $(document).ready(function(){
+            const icecreams = [
+        '내가 아인슈페너?!',
+        '엄마는 외계인',
+        '민트 초콜릿 칩',
+        '뉴욕 치즈케이크',
+        '아이스 초당옥수수',
+        '초콜릿 무스',
+        '체리쥬빌레',
+        '뮤! 넌 내거야',
+        '오레오 쿠키 앤 크림',
+      ];
+      for(let i=0; i<=icecreams.length; i++){
+        document.querySelector('img-box').src="../image/icecream`${i}`.png";
+        document.querySelector('text-center').innerText="Top`${i}`";
+
+        // $('.article-box').attr({"src":"../image/icecream`${i}`.png", })
+        // img.setAttribute('src', '../image/icecream`${i}`.png');
+
+      }
+
+        })
+        
+    </script>
+        
+        
+        <!-- <article  class="article-box" >
+            <img src="../image/icecrea${i}1.png" class="img-box">
+            <h3 class="text-center">Top`${i}`</h3>
+            <div class="text-center">내가 아인슈페너?!</div>
+        </article>
+
+        <article  class="article-box">
+            <img src="../image/icecream2.png" class="img-box">
+            <h3 class="text-center" >Top2</h3>
+            <h3 class="text-center">엄마는 외계인</h3>
+        </article>
+
+        <article class="article-box">
+            <img src="../image/icecream3.png" class="img-box">
+            <h3 class="text-center" >Top3</h3>
+            <h3 class="text-center">민트 초콜릿 칩</h3>
+        </article>
+        <article class="article-box">
+            <img src="../image/icecream4.png" class="img-box">
+            <h3 class="text-center" >Top4</h3>
+            <h3 class="text-center">뉴욕 치즈케이크</h3>
+        </article>
+        <article class="article-box">
+            <img src="../image/icecream5.png" class="img-box">
+            <h3 class="text-center" >Top5</h3>
+            <h3 class="text-center">아이스 초당옥수수</h3>
+        </article>
+        
+        <article class="article-box">
+            <img src="../image/icecream6.png" class="img-box">
+            <h3 class="text-center" >Top6</h3>
+            <h3 class="text-center">초콜릿 무스</h3>
+        </article>
+        <article class="article-box">
+            <img src="../image/icecream7.png" class="img-box">
+            <h3 class="text-center" >Top7</h3>
+            <h3 class="text-center">체리쥬빌레</h3>
+        </article>
+        <article class="article-box">
+            <img src="../image/icecream8.png" class="img-box">
+            <h3 class="text-center" >Top8</h3>
+            <h3 class="text-center">뮤! 넌 내거야</h3>
+        </article>
+        <article class="article-box">
+            <img src="../image/icecream9.png" class="img-box">
+            <h3 class="text-center" >Top9</h3>
+            <h3 class="text-center">오레오 쿠키 앤 크림</h3>
+        </article>
+    
+    </section> -->
+
+    <script>
+        const icecreams = [
+        '내가 아인슈페너?!',
+        '엄마는 외계인',
+        '민트 초콜릿 칩',
+        '뉴욕 치즈케이크',
+        '아이스 초당옥수수',
+        '초콜릿 무스',
+        '체리쥬빌레',
+        '뮤! 넌 내거야',
+        '오레오 쿠키 앤 크림',
+      ];
+    </script>
+
+</body>
+</html>

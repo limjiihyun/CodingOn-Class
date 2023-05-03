@@ -4,17 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+    crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
    <div style='width: 300px; margin: 20px; border: 3px solid silver; '>
-    <img src="../q.jpg" style='width: 200px; margin: 10px; margin-left: 40px;' >
+    <img id="img" src="../image/q.jpg" style='width: 200px; margin: 10px; margin-left: 40px;' >
     <br>   
-    <button style="margin-left: 40px;">사과</button>
-        <button>바나나</button>
-        <button>포도</button>
-        <button>복숭아</button>
+    <button class="btn apple" style="margin-left: 40px;">사과</button>
+        <button class="btn banana">바나나</button>
+        <button class="btn grape">포도</button>
+        <button class="btn peach">복숭아</button>
 </div>
+
+<script>
+    //  $('.btn').click(function(){
+    //     if($(this).hasClass('apple')){
+    //         $('img').attr('src', '../image/apple.jpg')
+    //     }else if($(this).hasClass('banana')){
+    //         $('img').attr('src','../image/banana.jpg')
+    //     }
+    //  })
+
+     //리팩토링
+     let fruits;
+     if($(this).hasClass('apple')){
+            fruits='apple'
+        }else if($(this).hasClass('banana')){
+            fruits='bananas'
+        }else if($(this).hasClass('grape')){
+            fruits='grapes'
+        }else if($(this).hasClass('peach')){
+            fruits='peaches'
+        }
+        $('img').attr('src', `../image/${fruits}.jpg`)
+
+
+
+</script>
     
         
 </body>
