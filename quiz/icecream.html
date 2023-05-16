@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+            crossorigin="anonymous"></script>
+        <title>Document</title>
+        <style>
+            .text-center {
+                text-align: center;
+                font-size: 20px;
+            }
+            .img-box {
+                width: 80px;
+                height: 80px;
+                border-radius: 30px;
+                background-color: rgb(255, 153, 253);
+                border: 1px solid rgb(255, 103, 252);
+            }
+            .article-box {
+                width: 100px;
+                height: 200px;
+                margin: 5px;
+                padding: 10px;
+                background-color: rgb(255, 215, 254);
+                border: 1px solid rgb(255, 149, 253);
+                border-radius: 10px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <h6 class="text-center">이달의 맛 BEST9</h6><br/>
+        <section class="text-center"></section>
+        <script>
+            $(document).ready(function () {
+                const section = $('section');
+                const icecreams = [
+                    '내가 아인슈페너?!',
+                    '엄마는 외계인',
+                    '민트 초콜릿 칩',
+                    '뉴욕 치즈케이크',
+                    '아이스 초당옥수수',
+                    '초콜릿 무스',
+                    '체리쥬빌레',
+                    '뮤! 넌 내거야',
+                    '오레오 쿠키 앤 크림'
+                ];
+                for (let i = 1; i < 10; i++) {
+                    const article = $('<article></article').addClass('article-box');
+                    const img = $('<img></img>')
+                        .addClass('img-box')
+                        .attr('src', `../image/icecream${i}.png`)
+                    const h3 = $('<h3></h3>')
+                        .addClass('text-center')
+                        .text(`Top${i}`);
+                    const div = $('<div></div>')
+                        .addClass('text-center')
+                        .text(icecreams[i - 1]);
+                    article.append(img, h3, div)
+                    section.append(article);
+                }
+
+            })
+
+            const icecreams = [
+        '내가 아인슈페너?!',
+        '엄마는 외계인',
+        '민트 초콜릿 칩',
+        '뉴욕 치즈케이크',
+        '아이스 초당옥수수',
+        '초콜릿 무스',
+        '체리쥬빌레',
+        '뮤! 넌 내거야',
+        '오레오 쿠키 앤 크림',
+      ];
+      for(let i = 0; i < icecreams.length; i++) {
+        const img = document.createElement('img')
+        img.setAttribute('src', `../image/icecream${i + 1}.png`)
+        img.classList.add('img-box')
+        const h3 = document.createElement('h3')
+        h3.textContent = `Top${i+1}`
+        h3.classList.add('text-center')
+        const div = document.createElement('div')
+        div.textContent = icecreams[i]
+        div.classList.add('text-center')
+        const article = document.createElement('article')
+        article.classList.add('article-box')
+        article.append(img)
+        article.append(h3)
+        article.append(div)
+        const box = document.querySelector('.text-center')
+        box.append(article)
+      }
+        </script>
+    </body>
+</html>

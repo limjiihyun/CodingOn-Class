@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>여기는 방명록</h2>
+    <labal for="writer">작성자</labal>
+    <input type="text" id="writer" /><br />
+    <labal for="content">내용</labal>
+    <input type="text" id="content" /><br />
+    <button onclick="register()">등록</button><br /><br />
+    <table border="1" cellpadding="5" cellspacing="1">
+        <tr>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
+        </tr>
+    </table>
+    <script>
+        function register() {
+            const name = $('#writer').val()
+            const content = $('#content').val()
+            const table = $('table')
+            const tr = document.createElement('tr')
+            console.log(tr)
+            const tdWriter = document.createElement('td')
+            tdWriter.textContent = name
+            const tdContent = document.createElement('td')
+            tdContent.textContent = content
+            const date = new Date().toLocaleString()
+            const tdDate = document.createElement('td')
+            tdDate.textContent = date
+            tr.append(tdWriter, tdContent, tdDate)
+            table.append(tr)
+            $('#writer').val('')
+            $('#content').val('')
+        }
+
+    </script>
+</body>
+</html>

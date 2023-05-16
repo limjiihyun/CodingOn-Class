@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+            function call(name) {
+                return new Promise(function (resolve, reject) {
+                    setTimeout(function () {
+                        console.log(name)
+                        resolve(name)
+                    }, 1000)
+                })
+            }
+            function back() {
+                return new Promise(function (resolve, reject) {
+                    setTimeout(function () {
+                        console.log('back')
+                        resolve('back')
+                    }, 1000)
+                })
+            }
+            function hell() {
+                return new Promise(function (resolve, reject) {
+                    setTimeout(function () {
+                        //console.log('여기는 callback hell')
+                        resolve('여기는 callback hell')
+                    }, 1000)
+                })
+            }
+            // call('kim').then(function(name) {     console.log(`${name} 반가워`)     return
+            // 키워드를 사용하면 결과값이 promise객체로 반환     return back(); }).then(function(str) {
+            // console.log(`${str}을 실행했구나`)     return hell(); }).then(function(msg) {
+            // console.log(msg) })
+            async function exec() {
+                const name = await call('kim')
+                console.log(`${name} 반가워`)
+                const text = await back()
+                console.log(`${text}을 실행했구나`)
+                const msg = await hell();
+                console.log(msg)
+            }
+            exec();
+
+
+        function call(name){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    console.log(name)
+                    resolve(name)
+                }, 1000)
+            })
+        }
+
+        function back() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    console.log('back')
+                    resolve('back')
+                }, 1000)
+            })
+        }
+
+        function hell(){
+            return new Promise(function (resolve, reject){
+                setTimeout(function(){
+                    // console.log('여기는 callback hell')
+                    resolve('여기는 callback hell')
+                }, 1000)
+            })
+        }
+
+        call('kim').then(function(name){
+            console.log(`${name} 반가워`)
+            //return 키워드를 사용하면 결과 값이 promise 객체로 반환
+            return back();
+        }).then(function(str){
+            console.log(`${str} 을 실행했구나`)
+            return hell();
+        }).then(function(msg){
+            console.log(msg)
+        })
+
+
+        // function call(name, cb){
+        //     setTimeout(function (){
+        //         console.log(name);
+        //         cb(name);
+        //     }, 1000);
+        // }
+        // function back(cb){
+        //     setTimeout(function(){
+        //         console.log('back');
+        //         cb('back');
+        //     }, 1000);
+        // }
+        // function hell(cb){
+        //     setTimeout(function(){
+        //         cb('callback hell');
+        //     }, 1000);
+        // }
+
+        // function Drink(){
+        //     return new Promise(function(resolve, reject){
+        //         setTimeout(function(){
+        //             console.log(resolve);
+                    
+        //         })
+        //     })
+        // }
+
+        // call(kim, back)
+        //   .then(function(result){
+        //     console.log(result, '반가워')
+        //     return call(result);
+        //   })
+        //   .then(function(result){
+        //     console.log(result, '을 실행했구나')
+        //     return back(result);
+        //   })
+        //   .then(function(result){
+        //     console.log('여기는', result)
+        //     return hell(result);
+        //   })
+
+        // promise(true)
+        //   .then(function(result){
+        //     console.log(result);
+        //   })
+    </script>
+</body>
+</html>

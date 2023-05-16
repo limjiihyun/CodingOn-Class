@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+    crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -44,8 +48,25 @@
         </article>
     </section>
 
-
     <script>
+      const icecreams = [
+        '내가 아인슈페너?!',
+        '엄마는 외계인',
+        '민트 초콜릿 칩',
+        '뉴욕 치즈케이크',
+        '아이스 초당옥수수',
+        '초콜릿 무스',
+        '체리쥬빌레',
+        '뮤! 넌 내거야',
+        '오레오 쿠키 앤 크림',
+      ];
+        for(let i=0; i<icecreams.length; i++){
+            article.classList.add('article-box')
+            $('img').replaceWith(`<img>$../image/icecream${i + 1}.png}`)
+            $('h3').replaceWith(`Top${i+1}`)
+            $('div').replaceWith(div)
+        }
+
     //      const todo=$('input[name=todo]').val()
     // console.log(todo)
     // $('.todos').append(`<li>${todo}</li>`)
@@ -62,11 +83,11 @@
     //     '뮤! 넌 내거야',
     //     '오레오 쿠키 앤 크림',
     //   ];
-      for(let i=1; i<=10; i++){
-        $("section").append("<article></article>")
-        console.log(i)
-        $("img").src(`../image/icecream${i}`);
-        $("h3").text(`Top${i}`);
+    //   for(let i=1; i<=10; i++){
+    //     $("section").append("<article></article>")
+    //     console.log(i)
+    //     $("img").src(`../image/icecream${i}`);
+    //     $("h3").text(`Top${i}`);
         //$("div").text()
         // document.querySelector('img-box').src="../image/icecream`${i}`.png";
         // $("h3").text('Top`${i}`')
@@ -74,16 +95,16 @@
         // $('.article-box').attr({"src":"../image/icecream`${i}`.png", })
         // img.setAttribute('src', '../image/icecream`${i}`.png');
 
-      }
+     
 
         
         
     </script>
         
         
-        <!-- <article  class="article-box" >
-            <img src="../image/icecrea${i}1.png" class="img-box">
-            <h3 class="text-center">Top`${i}`</h3>
+        <!-- <-- <article  class="article-box" >
+            <img src="../image/icecrea1.png" class="img-box">
+            <h3 class="text-center">Top1</h3>
             <div class="text-center">내가 아인슈페너?!</div>
         </article>
 
@@ -130,21 +151,7 @@
             <h3 class="text-center">오레오 쿠키 앤 크림</h3>
         </article>
     
-    </section> -->
-
-    <script>
-        const icecreams = [
-        '내가 아인슈페너?!',
-        '엄마는 외계인',
-        '민트 초콜릿 칩',
-        '뉴욕 치즈케이크',
-        '아이스 초당옥수수',
-        '초콜릿 무스',
-        '체리쥬빌레',
-        '뮤! 넌 내거야',
-        '오레오 쿠키 앤 크림',
-      ];
-    </script>
+    </section> --> -->
 
 </body>
 </html>

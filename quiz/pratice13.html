@@ -36,30 +36,52 @@
     
 </style>
 <body>
-    <h4 >계산기 만들기</h4>
-    <div>값1: &nbsp; <input id="input1"></div> 
-    <div >값2: &nbsp; <input id="input2"></div> 
-    <div >연산자 : &nbsp; <input></div>
-    <button onClick="getValue()">계산</button>
-    <button onClick="setValue()">초기화</button>
-    <div>결과 &nbsp; <input></div>
 
-    <!-- <h2>val()</h2>
-    <input type="text"/>
-    <button onClick="getValue()">값 가져오기</button>
-    <button onClick="setValue()">값 설정하기</button> -->
+    <label for="value1">값1: </label>
+    <input type="number" id="value1">
+    <label for="value2">값2: </label>
+    <input type="number" id="value2">
+    <label for="calc">연산자: </label>
+    <input type="text" id="calc">
+
+    <button onClick="calc()">계산</button>
+    <button onClick="reset()">초기화</button>
+
+    <label for="result">결과: </label>
+    <input type="number" id="result" disabled/>
+
 </body>
 <script>
- function getValue(){
-    let value1=$('input').val();
-    console.log(value)
-    let value2=$('input2').val();
-    console.log(value2)
-}
 
+    function calc(){
+        //타입이 문자인 숫자일 경우 형변환은 + 로 가능하다.
+        //숫자를 문자로 형변환할 때는 숫자 + ''
+        const val1=+document.getElementById('value1').value
+        const val2=+document.getElementById('value2').value
+        const calc=document.getElementById('calc').value
+        console.log(val1, val2, calc)
 
-function setValue(){
-    $('input').val('패스워드를 입력하세요')
-}
+        let result;    
+        if (calc === '+') {
+            result = val1 + val2;
+        } else if (calc === '-') {
+            result = val1 - val2;
+        } else if (calc === '/') {
+            result = val1 / val2;
+        } else if (calc === '*') {
+            result = val1 * val2;
+        }else{
+            result='오류발생'
+        }
+        document.getElementById('result').value=result;
+
+    }
+    function reset() {
+            document.getElementById('val1').value = ''
+            document.getElementById('val2').value = ''
+            document.getElementById('calc').value = ''
+            document.getElementById('result').value = ''
+        }
+
 </script>
 </html>
