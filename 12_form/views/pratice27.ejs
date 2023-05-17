@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/pratice27" name="login" method="post">
+        이름 <input type="text" name="id" />
+        <p>
+        <fieldset style="width: 30%;">
+            <legend>성별</legend>
+            <input type="radio" name="gender" value="boy" required />남자
+            <input type="radio" name="gender" value="girl" required />여자
+        </fieldset>
+        <p>
+        <fieldset style="width: 30%;">
+            <legend>생년월일</legend>
+            <select name="month" id="month">
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+            </select>년
+            <select name="month" id="year">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>월
+            <select name="month" id="day">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>일
+        </fieldset>
+        <p>
+        <fieldset name="hobby" style="width: 30%;">
+            <legend>관심사</legend>
+            <input type="checkbox" name="hobby" value="여행" />여행
+            <input type="checkbox" name="hobby" value="패션" />패션
+            <input type="checkbox" name="hobby" value="음식" />음식
+        </fieldset>
+        <p>
+        <fieldset name="choice" style="width: 30%;">
+            <legend>선택</legend>
+            좋아하는 색상<input type="color" />
+        </fieldset>
+        <p></p>
+        <input type="submit" value="회원가입" />
+
+    </form>
+</body>
+
+</html>
