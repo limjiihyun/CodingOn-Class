@@ -19,11 +19,6 @@ app.get("/pratice26", function (req, res) {
   res.render("pratice26");
 });
 
-//localhost:8080/pratice27
-app.get("/pratice27", function (req, res) {
-  res.render("pratice27");
-});
-
 //localhost:8080/result
 app.get("/result26", function (req, res) {
   console.log(req.query);
@@ -33,12 +28,17 @@ app.get("/result26", function (req, res) {
   });
 });
 
-app.post("/result27", function (req, res) {
-  res.render("result", {
-    title: "실습 27 해설입니다.",
-    info: req.body,
-  });
+//localhost:8080/pratice27
+app.get("/pratice27", function (req, res) {
+  res.render("pratice27");
 });
+
+// app.post("/result27", function (req, res) {
+//   res.render("result", {
+//     title: "실습 27 해설입니다.",
+//     info: req.body,
+//   });
+// });
 
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
