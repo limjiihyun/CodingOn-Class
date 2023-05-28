@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="register">
+        <h3>개인정보</h3>
+        아이디: <input type="text" name="id">
+        <br />
+        비밀번호: <input type="password" name="pw">
+        <br />
+        이름: <input type="text" name="name">
+        <br />
+        나이: <input type="number" name="age">
+        <br /><br />
+        프로필사진 :
+        <input type="file" name="dynamicUpload" id="dynamicUpload">
+        <br><br>
+        <button type="button" onClick="reset()">리셋</button>
+        <button type="button" onClick="upload()">회원가입</button>
+
+    </form>
+    <div class="result"></div>
+    <img id="img" src="" width="300px" />
+
+
+    <script>
+        const result = document.querySelector(".result");
+
+        function upload() {
+            console.log('axios GET!!!!!!')
+            //폼 선택하기
+            const form = document.forms['register'];
+            console.dir(form);
+
+            const data = {
+                id: form.id.value,
+                pw: form.pw.value,
+                name: form.name.value,
+                age: form.age.value
+
+                // name: form.name.value,
+                // gender: form.gender.value, 
+            };
+            axios({
+                url: '/axios',
+                method: 'GET',
+                params: data,//get일 떄는 params
+            }).then(function (abc) {
+                console.log(abc.data);
+                const { id, pw, name, age } = abc.data;
+                result.textContent = `아이디 : ${id} 비밀번호 : ${pw}, 이름 : ${name}, 나이 : ${age}`
+            });
+
+            console.log('axios GET!!!!!!img')
+
+            //form을 동적으로 제어
+            const formData = new FormData();
+            const file = document.getElementById('dynamicUpload');
+            formData.append("dynamicUpload", file.files[0]);
+            console.log(file.files[0]);
+
+            axios({
+                method: "POST",
+                url: "/dynamic",
+                data: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+            }).then(function (res) {
+                console.log(res);
+                const img = document.querySelector("#img");
+                img.setAttribute("src", res.data.path);
+            });
+        }
+
+        // function upload() {
+        //     console.log('axios GET!!!!!!img')
+
+        //     //form을 동적으로 제어
+        //     const formData = new FormData();
+        //     const file = document.getElementById('dynamicUpload');
+        //     formData.append("dynamicUpload", file.files[0]);
+        //     console.log(file.files[0]);
+
+        //     axios({
+        //         method: "POST",
+        //         url: "/dynamic",
+        //         data: formData,
+        //         headers: {
+        //             'Content-Type': 'multipart/form-data'
+        //         },
+        //     }).then(function (res) {
+        //         console.log(res);
+        //         const img = document.querySelector("#img");
+        //         img.setAttribute("src", res.data.path);
+        //     });
+        // }
+    </script>
+</body>
+
+</html>
