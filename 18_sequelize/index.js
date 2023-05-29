@@ -12,8 +12,8 @@ app.use(express.json());
 
 //routes
 //localhost:8080/visitor의 시작점!
-const userRouter = require("./routes/user");
-app.use("/user", userRouter);
+const visitorRouter = require("./routes/index");
+app.use("/index", visitorRouter);
 
 //404
 app.get("*", function (req, res) {

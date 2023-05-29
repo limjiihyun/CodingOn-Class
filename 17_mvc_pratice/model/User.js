@@ -1,50 +1,59 @@
-// //임시데이터
-// exports.getVisitors = () => {
-//   return [
-//     { id: 1, name: "홍길동", comment: "내가 왔다" },
-//     { id: 2, name: "이찬혁", comment: "으라차차" },
-//   ];
-// };
 const mysql = require("mysql");
 //DB연결
 const conn = mysql.createConnection({
   host: "localhost",
-  user: "kdtuser",
-  password: "1234",
+  user: "logindata",
+  password: "dlawlgus55!!",
   database: "kdt7",
 });
-//방명록 전체 보이기
-//GET /visitor/visitor
-exports.MgetVisitors = (callback) => {
-  conn.query(`SELECT * FROM visitor`, function (err, rows) {
+
+//POST:localhost:8080/user/signup
+exports.Mpost_signup = (data, call) => {
+  const query = `INSERY INTO user(userid, name, pw) VALUES 
+  (${data.userid}, ${data.name}, ${data.pw})`;
+
+  conn.query(query, (err, rows) => {
     if (err) {
       console.log(err);
     }
-    console.log("MgetVisitors: ", rows);
-    callback(rows);
+    console.log("Mpost_signup", rows);
+    call();
   });
 };
-//방명록 하나 조회
-//GET /visitor/visitor/get?id=index
-exports.MgetVisitor1 = (id, callback) => {
-  conn.query(`SELECT * FROM visitor WHERE id=${id}`, (err, rows) => {
+
+//post: localhost:8080/user/signin
+exports.Mpost_signin = (data, call) => {
+  const query = `SELECT * FROM user WHERE userid= '${data.userid}, ${data.name}, ${data.pw})' 
+  AND pw=${data.pw}`;
+  conn.query(query, (err, rows) => {
+    if (err) {
+      console.log("err: ", err);
+    }
+    console.log("Mpost_signin", rows);
+    call(rows);
+  });
+};
+
+//회원정보
+exports.Mpost_profile = (data, call) => {
+  const query = `SELECT * FROM user WHERE userid='${data.userid}'`;
+  conn.query(query, function (err, rows) {
     if (err) {
       console.log(err);
     }
-    console.log("MgetVisitor1: ", rows);
+    console.log("Mpost_signup: ", rows);
     callback(rows);
   });
 };
-//방명록 등록
-exports.MpostVisitor = (data, callback) => {
-  conn.query(
-    `INSERT INTO visitor( name, comment) VALUES ('${data.name}', '${data.comment}');`,
-    function (err, rows) {
-      if (err) {
-        console.log(err);
-      }
-      console.log("MpostVisitor: ", rows);
-      callback(rows.insertId);
+
+//수정
+exports.Medit_profile = (data, call) => {
+  const query = `UPDATA user SET userid='${data.userid}', 'name=${data.username}'`;
+  conn.query(query, (err, rows) => {
+    if (err) {
+      console.log(err);
     }
-  );
+    console.log("Medit_profile", rows);
+    call();
+  });
 };
