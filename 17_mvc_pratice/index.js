@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //routes
-//localhost:8080/visitor의 시작점!
+//localhost:8080/user
 const userRouter = require("./routes/user");
 app.use("/user", userRouter);
 
