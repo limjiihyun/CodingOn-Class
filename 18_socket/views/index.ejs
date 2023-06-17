@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Socket</h4>
+    <h5></h5>
+    <div id="nick"></div>
+    <ul></ul>
+    <form id="nickname">
+        <input type="text" />
+        <button>닉네임</button>
+    </form>
+    <form id="room">
+        <input type="text" />
+        <button>접속</button>
+    </form>
+    <form id="chat" style="display: none">
+        <input type="text" />
+        <button>채팅</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/js/app.js"></script>
+    <script>
+        const socket = io();
+        const chatForm = document.querySelector("#chat");
+        const roomForm = document.querySelector("#room");
+        const nickForm = document.querySelector("#nickname");
+        const ul = document.querySelector("ul");
+        let roomName;
+        function sendMessage(event) {
+            event.preventDefault();
+            const input = chatForm.querySelector("input");
+            socket.emit("chat", { msg: input.value }, roomName, () => {
+                console.log(input.value);
+                const li = document.createElement("li");
+                li.textContent = `나: ${input.value}`;
+                ul.append(li);
+            });
+        }
+        function showRoom() {
+            chatForm.style.display = "block";
+            roomForm.style.display = "none";
+            nickForm.style.display = "none";
+            const h5 = document.querySelector("h5");
+            h5.innerText = `${roomName}에 입장하셨습니다`;
+            chatForm.addEventListener("submit", sendMessage);
+        }
+        function makeRoom(e) {
+            e.preventDefault();
+            const input = roomForm.querySelector("input");
+            socket.emit("room", { msg: input.value }, showRoom);
+            roomName = input.value;
+        }
+        function makeNick(e) {
+            e.preventDefault();
+            const input = nickForm.querySelector("input");
+            socket.emit("nick", input.value);
+        }
+        roomForm.addEventListener("submit", makeRoom);
+        nickForm.addEventListener("submit", makeNick);
+        socket.on("new_chat", (message) => {
+            const li = document.createElement("li");
+            li.textContent = message;
+            ul.append(li);
+        });
+        socket.on("Welcome", (value) => {
+            console.log(value);
+            const nick = document.querySelector("#nick");
+            nick.textContent = `${value} 님께서 입장하셨습니다`;
+        });
+      /*
+        function hello() {
+          socket.emit("HELLO", { msg: "hello" });
+          socket.on("s_hello", (value) => {
+            console.log(value);
+            const li = document.createElement("li");
+            li.innerText = value.msg;
+            ul.append(li);
+          });
+        }
+        function study() {
+          socket.emit("study", { msg: "study" });
+          socket.on("s_study", (value) => {
+            const li = document.createElement("li");
+            li.innerText = value.msg;
+            ul.append(li);
+          });
+        }
+        function bye() {
+          socket.emit("byeaa", { msg: "bye" });
+          socket.on("s_bye", (value) => {
+            console.log(value);
+            const li = document.createElement("li");
+            li.innerText = value.msg;
+            ul.append(li);
+          });
+        }
+        */
+    </script>
+</body>
+
+</html>
