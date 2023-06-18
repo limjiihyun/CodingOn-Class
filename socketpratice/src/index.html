@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="user-container">
+            <label for="nickname">대화명</label>
+            <input type="text" id="nickname">
+        </div>
+        <div class="display-container">
+            <ul class="chatting-list">
+                <li class="sent">
+                    <span class="profile">
+                        <span class="user"></span>
+                        <img class="imgclass"
+                            src="https://blog.kakaocdn.net/dn/0mySg/btqCUccOGVk/nQ68nZiNKoIEGNJkooELF1/img.jpg">
+                    </span>
+                    <span class="message"></span>
+                    <span class="time"></span>
+                </li>
+                <li class="received">
+                    <span class="profile">
+                        <span class="user"></span>
+                        <img class="imgclass"
+                            src="https://blog.kakaocdn.net/dn/0mySg/btqCUccOGVk/nQ68nZiNKoIEGNJkooELF1/img.jpg">
+                    </span>
+                    <span class="message"></span>
+                    <span class="time"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="input-container">
+            <span>
+                <input type="text" class="chatting-input">
+                <button class="send-button">전송</button>
+            </span>
+        </div>
+    </div>
+    <!-- express app을 사용하기 때문에 절대경로를 사용 -->
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.2/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+
+</html>

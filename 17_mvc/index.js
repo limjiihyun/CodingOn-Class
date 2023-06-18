@@ -12,7 +12,8 @@ app.use("/views", express.static(__dirname + "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//router 분리
+//router 를 불러오는 부분
+//아래 코드를 이용해 특정 url의 역할 구분 가능하다.
 //미들웨어,라우터 하나의 독립된 기능을 가진 함수
 const indexRoute = require("./routes");
 app.use("/", indexRoute);
