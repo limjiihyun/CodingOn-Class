@@ -1,0 +1,63 @@
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  position: absolute;
+}
+
+.circle1 {
+  background-color: rgb(73, 91, 150);
+  top: 40px;
+  left: 10px;
+}
+
+.circle2 {
+  background-color: rgb(36, 61, 206);
+  top: 93px;
+  left: 44px;
+}
+
+.circle3 {
+  background-color: rgb(52, 118, 231);
+  top: 111px;
+  left: 79px;
+}
+
+.circle4 {
+  background-color: rgb(47, 146, 233);
+  top: 112px;
+  left: 137px;
+}
+
+/* z-index는 position 속성이 relative나 absolute일 때만 동작합니다 
+높은 정수가 제일 위로 올라옵니다.(양수,음수 가능)*/
+.circle5 {
+  background-color: rgb(10, 63, 110);
+  top: 107px;
+  left: 196px;
+  z-index: 10;
+}
+.white {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 20px;
+  top: 10px;
+  left: 20px;
+  position: absolute;
+}
+.black {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  position: absolute;
+  background-color: black;
+  top: 10px;
+}
+
+.grass {
+  width: 100px;
+  position: absolute;
+  width: 260px;
+  top: 127px;
+}

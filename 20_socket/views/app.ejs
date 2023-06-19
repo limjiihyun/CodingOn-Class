@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Socket</h4>
+    <div>
+        <input type="text" id="nickname" />
+        <button type="button" id="entrybutton" onclick="entry()">입장</button>
+    </div>
+    <div class="chat-box">
+        <div id="chat-list" class="chat-list"></div>
+        <ul></ul>
+        <select id="nick-list"></select>
+        <input type="text" id="message" />
+        <button type="button" onclick="sendMessage()">전송</button>
+    </div>
+    <!-- <button onclick="hello()">Hello</button>
+    <button onclick="study()">Study</button>
+    <button onclick="bye()">Bye</button> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        socket.on("connect", () => {
+            console.log(`client Connected >>`, socket.id);
+        });
+        socket.on("notice", (msg) => {
+            const list = document.querySelector("#chat-list");
+            list.insertAdjacentHTML("beforeend", `<div>${msg}</div>`);
+        });
+        //참가자 아이디
+        const chatForm = document.querySelector("#nickname");
+        const entrybutton = document.querySelector("#entrybutton")
+        function entry() {
+            const id = document.querySelector("#nickname").value;
+            socket.emit("setNick", id);
+            chatForm.style.display = "none";
+            entrybutton.style.display = "none";
+
+        }
+        function sendMessage() {
+            const msg = document.querySelector("#message").value;
+            const nick = document.querySelector("#nickname").value;
+            console.log(msg);
+            socket.emit("send", { nick, msg });
+        }
+        socket.on("newMessage", (data) => {
+            const chat = document.querySelector("#chat-list");
+            const li = document.createElement("li");
+            li.textContent = `${data.nick}: ${data.msg}`;
+            chat.textContent = `${data.nick}: ${data.msg}`;
+            ul.append(li);
+        });
+        socket.on("updateNick", (data) => {
+            let option = "<option>전체</option>";
+            for (const key in data) {
+                console.log(key, data[key]);
+                option += `<option value=${key}>${data[key]}</option>`;
+            }
+            document.querySelector("#nick-list").innerHTML = option;
+        });
+        socket.on("error", (data) => {
+            alert(data);
+        });
+      //   function hello() {
+      //     socket.emit(
+      //       "hello",
+      //       { who: "client", msg: "hello" },
+      //       1000,
+      //       "안녕",
+      //       () => {
+      //         console.log("함수가 실행");
+      //       }
+      //     );
+      //     // socket.on("sHello", (data) => {
+      //     //   console.log(`${data.who} : ${data.msg}`);
+      //     // });
+      //   }
+      //   function study() {
+      //     socket.emit("study", { who: "client", msg: "study" });
+      //     socket.on("sStudy", (data) => {
+      //       console.log(`${data.who} : ${data.msg}`);
+      //     });
+      //   }
+      //   function bye() {
+      //     socket.emit("bye", { who: "client", msg: "bye" });
+      //     socket.on("sBye", (data) => {
+      //       console.log(`${data.who} : ${data.msg}`);
+      //     });
+      //   }
+    </script>
+</body>
+
+</html>

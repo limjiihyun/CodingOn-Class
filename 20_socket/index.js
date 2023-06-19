@@ -1,56 +1,52 @@
 const express = require("express");
-//const WebSocket = require("ws");
 const SocketIO = require("socket.io");
 const app = express();
 const PORT = 8000;
 //템플릿
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
-app.use("/public", express.static(__dirname + "/public"));
-app.get("/", (req, res) => res.render("index"));
+app.get("/", (req, res) => res.render("app"));
 const server = app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
-//const ws = new WebSocket.Server({ server });
 const io = SocketIO(server);
-const nickArray = [];
+const nickArray = {};
+//유저 목록 업데이트
+function updateNick() {
+  io.emit("updateNick", nickArray);
+}
 io.on("connection", (socket) => {
-  console.log("socketId: ", socket.id);
-  socket.on("chat", (value, room, call) => {
-    console.log(value);
-    socket.to(room).emit("new_chat", value.msg);
-    call();
+  console.log(`server Connected >>`, socket.id);
+  //io.emit("notice", `${socket.id}님이 입장하셨습니다.`);
+  socket.on("setNick", (data) => {
+    console.log(`nick >> ${data}`);
+    if (Object.values(nickArray).indexOf(data) != -1) {
+      socket.emit("error", "이미 존재하는 닉네임입니다.");
+    } else {
+      nickArray[socket.id] = data;
+      io.emit("notice", `${data}님이 입장하셨습니다.`);
+      updateNick();
+    }
   });
-  socket.on("room", (value, call) => {
-    socket.join(value.msg);
-    call();
-    socket.to(value.msg).emit("Welcome", nickArray[nickArray.length - 1]);
+  socket.on("send", (data) => {
+    const sendData = { nick: data.nick, msg: data.msg };
+    console.log(sendData);
+    io.emit("newMessage", sendData);
   });
-  socket.on("nick", (value) => {
-    nickArray.push(value);
-    console.log(nickArray);
-  });
-  /*
-  socket.on("HELLO", (value) => {
-    console.log(value);
-    socket.emit("s_hello", { msg: "안녕하세요" });
-  });
-  socket.on("study", (value) => {
-    console.log(value);
-    socket.emit("s_study", { msg: "공부합시다" });
-  });
-  socket.on("bye", (value) => {
-    console.log(value);
-    socket.emit("s_bye", { msg: "안녕히가세요" });
-  });
-  */
+  //   socket.on("hello", (data, num, hi, cb) => {
+  //     console.log(`${data.who} : ${data.msg}: ${num}: ${hi}`);
+  //     cb();
+  //     //socket.emit("sHello", { who: "Server", msg: "안녕하세요" });
+  //   });
+  //   socket.on("study", (data) => {
+  //     console.log(`${data.who} : ${data.msg}`);
+  //     socket.emit("sStudy", { who: "Server", msg: "공부합시다" });
+  //   });
+  //   socket.on("bye", (data) => {
+  //     console.log(`${data.who} : ${data.msg}`);
+  //     socket.emit("sBye", { who: "Server", msg: "잘가~~~" });
+  //   });
+  //   socket.on("disconnect", () => {
+  //     console.log(`Server disconnected >>`, socket.id);
+  //   });
 });
-/*
-ws.on("connection", (socket) => {
-  //console.log(socket);
-  socket.on("message", (message) => {
-    console.log(message.toString());
-  });
-  socket.send("Hello World");
-});
-*/
