@@ -1,0 +1,81 @@
+.hello {
+  background-color: rgb(240, 192, 126);
+  font-size: 30px;
+  width: 200px;
+  text-align: center;
+  color: brown;
+  margin: 3%;
+}
+.box {
+  margin: 5%;
+}
+.red {
+  background-color: red;
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.orange {
+  background-color: rgb(255, 174, 0);
+  width: 60px;
+  height: 80px;
+  float: left;
+}
+.yellow {
+  background-color: rgb(234, 250, 9);
+  width: 60px;
+  height: 100px;
+  float: left;
+}
+.green {
+  background-color: rgb(81, 250, 9);
+  width: 60px;
+  height: 120px;
+  float: left;
+}
+.blue {
+  background-color: rgb(9, 121, 250);
+  width: 60px;
+  height: 140px;
+  float: left;
+}
+.navy {
+  background-color: rgb(41, 9, 250);
+  width: 60px;
+  height: 160px;
+  float: left;
+}
+.purple {
+  background-color: rgb(194, 9, 250);
+  width: 60px;
+  height: 180px;
+  float: left;
+}
+.my_style {
+  background-color: blue;
+  color: orange;
+  font-size: 40px;
+  padding: 12;
+}
+.style {
+  color: orange;
+  font-size: 40px;
+  margin-top: 20;
+}
+.besttext {
+  color: orange;
+  text-align: center;
+  font-size: 30px;
+}
+.bestbox {
+  background-color: antiquewhite;
+  width: 600px;
+  height: 100%;
+  margin: 4%;
+}
+.bextbox2 {
+  margin: 4%;
+}
+.red-text {
+  color: red;
+}

@@ -15,6 +15,9 @@ function App() {
       <div className="black-nav">
         <div>개발 blog</div>
       </div>
+
+      <button></button>
+
       <button
         onClick={() => {
           let copy = [...글제목];
