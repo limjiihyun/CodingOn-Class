@@ -13,10 +13,10 @@ function LifeCycleFuncChild(props) {
   //     };
   //   }, []);
 
-  //   useEffect(() => {
-  //     //Mount & Update 시점에 실행
-  //     console.log("useEffect | Update");
-  //   });
+  useEffect(() => {
+    //Mount & Update 시점에 실행
+    console.log("useEffect | Update");
+  });
   //text가 변경될때
   useEffect(() => {
     console.log("Text | Update");

@@ -1,0 +1,66 @@
+// .SassComponent {
+//   display: flex;
+
+//   .box {
+//     width: 100px;
+//     height: 100px;
+
+//     //pseudo(&)
+//     //.box.red(동일선상에 클래스가 같이 존재할 때)
+//     &.red {
+//       background-color: red;
+//     }
+//     &.orange {
+//       background-color: orange;
+//     }
+//     &.yellow {
+//       background-color: yellow;
+//     }
+//     &.green {
+//       background-color: green;
+//     }
+//     &.blue {
+//       background-color: blue;
+//     }
+//     &.indigo {
+//       background-color: indigo;
+//     }
+//     &.purple {
+//       background-color: purple;
+//     }
+//   }
+// }
+
+//2번째
+// $color-red: red;
+// $color-orange: orange;
+// $color-yellow: yellow;
+// $color-green: green;
+// $color-blue: blue;
+// $color-indigo: indigo;
+// $color-purple: purple;
+
+// @mixin color-box($size) {
+//   width: $size;
+//   height: $size;
+//   border: 1px solid black;
+// }
+@import "./utils.scss";
+
+.SassComponent {
+  display: flex;
+
+  .box {
+    @include color-box(100px);
+
+    &.red {
+      background-color: $color-red;
+    }
+    &:hover {
+      $box-animation: $animation-duration * 2;
+      cursor: pointer;
+      transform: translateY(-20px);
+      transition: transform $box-animation;
+    }
+  }
+}

@@ -4,8 +4,8 @@ function Repeat() {
   return (
     <>
       <div>
-        {list.map((elem, index) => {
-          return <div>{elem}</div>;
+        {list.map((value) => {
+          return <div>{value}</div>;
         })}
       </div>
     </>

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 function RefSample2() {
-  //1. useRef() 를 사용하여 로컬 변수 만들기
+  //1. useRef()를 사용하여 로컬 변수 만들기
   const idRef = useRef(1);
 
   const plusId = () => {

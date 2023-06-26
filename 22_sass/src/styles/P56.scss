@@ -1,0 +1,14 @@
+@import "./utils.scss";
+
+.P56 {
+  display: flex;
+
+  .box {
+    @include color-box(100px);
+
+    &.red {
+      background-color: $color-red;
+    }
+    
+  }
+}

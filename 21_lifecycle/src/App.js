@@ -6,9 +6,9 @@ import Practice55 from "./P55";
 function App() {
   return (
     <div>
-      {/* <LifeCycleFunc></LifeCycleFunc>
-      <LifeCycleClass></LifeCycleClass> */}
-      <Practice55></Practice55>
+      <LifeCycleFunc></LifeCycleFunc>
+      <LifeCycleClass></LifeCycleClass>
+      {/* <Practice55></Practice55> */}
     </div>
   );
 }

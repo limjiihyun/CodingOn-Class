@@ -1,0 +1,15 @@
+$color-red: red;
+$color-orange: orange;
+$color-yellow: yellow;
+$color-green: green;
+$color-blue: blue;
+$color-indigo: indigo;
+$color-purple: purple;
+
+$animation-duration: 0.4s;
+
+@mixin color-box($size) {
+  width: $size;
+  height: $size;
+  border: 1px solid black;
+}
